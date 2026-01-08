@@ -20,7 +20,7 @@ const Navbar = () => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-md py-4' : 'bg-transparent py-6'}`}>
       <div className="container flex items-center justify-between">
-        <Link to="/" className="text-2xl font-bold text-[var(--color-primary)]">
+        <Link to="/" className="text-3xl font-logo font-bold text-[var(--color-primary)] tracking-tighter">
           YUVATO
         </Link>
 
@@ -82,7 +82,7 @@ const Footer = () => (
   <footer className="bg-[var(--color-primary)] text-white py-12 mt-auto">
     <div className="container grid md:grid-cols-4 gap-8">
       <div>
-        <h3 className="text-2xl font-bold mb-4 text-white">YUVATO</h3>
+        <h3 className="text-3xl font-logo font-bold mb-4 text-white tracking-tighter">YUVATO</h3>
         <p className="text-gray-400">Transforming educational institutions with premium services and smart technology.</p>
       </div>
       <div>

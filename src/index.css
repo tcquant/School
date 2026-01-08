@@ -48,6 +48,12 @@ h6 {
   letter-spacing: -0.02em;
 }
 
+.font-logo {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
 /* Utilities classes */
 .btn {
   display: inline-flex;
