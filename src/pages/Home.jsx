@@ -2,14 +2,14 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FiArrowRight, FiMonitor, FiBookOpen, FiClipboard, FiUsers } from 'react-icons/fi';
 
-// Import Generated 3D Assets
-import heroImg from '../assets/images/hero_classroom_3d_pastel_1767724060686.png';
-import smartPanelImg from '../assets/images/service_smart_panel_3d_1767724083402.png';
-import cbseImg from '../assets/images/service_cbse_affiliation_3d_1767724103778.png';
-import auditingImg from '../assets/images/service_auditing_3d_retry_1767724203268.png';
-import uniformsImg from '../assets/images/service_uniforms_3d_1767724145408.png';
-import stationeryImg from '../assets/images/service_stationery_3d_1767724161468.png';
-import advertisingImg from '../assets/images/service_advertising_3d_retry_1767724219297.png';
+// Import Generated Realistic Assets
+import heroImg from '../assets/images/hero_classroom_real.png';
+import smartPanelImg from '../assets/images/smart_panel_real.png';
+import cbseImg from '../assets/images/cbse_affiliation_real.png';
+import auditingImg from '../assets/images/school_auditing_real.png';
+import uniformsImg from '../assets/images/school_uniforms_real.png';
+import stationeryImg from '../assets/images/school_stationery_real.png';
+import advertisingImg from '../assets/images/school_advertising_real.png';
 
 const HeroSection = () => (
     <section className="relative min-h-[90vh] flex items-center bg-[var(--color-bg-light)] overflow-hidden">

@@ -1,5 +1,5 @@
 import ServicePage from '../components/ServicePage';
-import heroImg from '../assets/images/uniforms_hero_velvet.png';
+import heroImg from '../assets/images/school_uniforms_real.png';
 
 const SchoolUniforms = () => {
     const features = [
