@@ -103,8 +103,9 @@ const Footer = () => (
       </div>
       <div>
         <h4 className="text-lg font-bold mb-4 text-white">Contact</h4>
-        <p className="text-gray-400">New Delhi, India</p>
-        <p className="text-gray-400">info@yuvato.com</p>
+        <p className="text-gray-400">Unit No 06, 5th Floor Cosmo Mall, Zirakpur, Punjab</p>
+        <p className="text-gray-400">info@yuvatoindia.com</p>
+        <p className="text-gray-400">+91 91104-13537</p>
       </div>
     </div>
     <div className="container mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">

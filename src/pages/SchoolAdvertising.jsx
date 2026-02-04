@@ -1,4 +1,6 @@
 import ServicePage from '../components/ServicePage';
+import heroImg from '../assets/images/service-advertising.png';
+import overviewImg from '../assets/images/overview-advertising.png';
 
 const SchoolAdvertising = () => {
     const features = [
@@ -18,9 +20,9 @@ const SchoolAdvertising = () => {
         <ServicePage
             title="School Advertising"
             subtitle="Boost Admissions and Build Your Brand"
-            heroImage="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2940&auto=format&fit=crop"
+            heroImage={heroImg}
             overviewText={overview}
-            overviewImage="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=2940&auto=format&fit=crop"
+            overviewImage={overviewImg}
             features={features}
             ctaText="Plan Campaign"
         />

@@ -1,26 +1,28 @@
 import ServicePage from '../components/ServicePage';
+import heroImg from '../assets/images/service-auditing.png';
+import overviewImg from '../assets/images/overview-auditing.png';
 
 const SchoolAuditing = () => {
     const features = [
-        { title: "Academic Audit", description: "Review of curriculum delivery, teacher quality, and learning outcomes." },
-        { title: "Financial Audit", description: "Comprehensive analysis of fee collections, expenses, and budget planning." },
-        { title: "Safety Audit", description: "Inspection of school buses, building safety, and fire norms." },
-        { title: "Regulatory Compliance", description: "Ensuring adherence to RTE Act and State Education Board rules." },
-        { title: "Gap Analysis", description: "Identifying areas of improvement before official inspections." },
-        { title: "Process Optimization", description: "Streamlining admin processes to reduce cost and improve efficiency." }
+        { title: "Infrastructure Audit", description: "Verifying classroom sizes, laboratory dimensions, and building standards as per norms." },
+        { title: "Safety Audit", description: "Comprehensive inspection of school buses, fire safety systems, and structural safety." },
+        { title: "Documentation Audit", description: "Review of all mandatory registers, certificates, and compliance documents." },
+        { title: "Gap Analysis", description: "Identifying deficiencies and providing corrective action plans to meet standards." },
+        { title: "Inspection Readiness", description: "Mock inspections to prepare the school for official board observations." },
+        { title: "Academic Standards", description: "Evaluating curriculum delivery and teacher quality against benchmarks." }
     ];
 
-    const overview = `Our "AuditMySchool" service is designed to help school management understand the true health of their institution. We go beyond simple accounting.
+    const overview = `Yuvato's auditing services help school managements ensure their institution meets the highest standards of safety and compliance. We provide a rigorous 360-degree evaluation of your school's physical and administrative health.
   
-  We perform 360-degree audits covering Academic Standards, Infrastructure Safety, and Financial Integrity. Whether you are preparing for a CBSE inspection or just want to improve quality, our detailed reports provide actionable insights to elevate your school's standing.`;
+  Our audits go beyond simple checks; we perform detailed infrastructure assessments, safety verifications, and documentation reviews. Through professional gap analysis and corrective action planning, we ensure your school is not only compliant with government and board regulations but also provides a safe, high-quality environment for students.`;
 
     return (
         <ServicePage
             title="School Audit Services"
             subtitle="Comprehensive Academic & Financial Auditing"
-            heroImage="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2940&auto=format&fit=crop"
+            heroImage={heroImg}
             overviewText={overview}
-            overviewImage="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2940&auto=format&fit=crop"
+            overviewImage={overviewImg}
             features={features}
             ctaText="Schedule an Audit"
         />

@@ -1,6 +1,8 @@
-import { motion } from 'framer-motion';
+import { color, motion } from 'framer-motion';
 import { FiCheck } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
+import defaultHero from '../assets/images/hero-default.png';
+import defaultOverview from '../assets/images/overview-default.png';
 
 const ServicePage = ({
     title,
@@ -10,7 +12,9 @@ const ServicePage = ({
     overviewImage,
     features = [],
     ctaText = "Contact Us Now",
-    ctaLink = "/#contact"
+    ctaLink = "/#contact",
+    children,
+    midSection
 }) => {
     return (
         <div className="pt-0">
@@ -19,7 +23,7 @@ const ServicePage = ({
                 <div className="absolute inset-0 bg-black/50 z-10" />
                 <div
                     className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: `url(${heroImage || 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2940&auto=format&fit=crop'})` }}
+                    style={{ backgroundImage: `url(${heroImage || defaultHero})` }}
                 />
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -27,7 +31,7 @@ const ServicePage = ({
                     transition={{ duration: 0.8 }}
                     className="relative z-20 text-center container px-4"
                 >
-                    <h1 className="text-4xl md:text-6xl font-bold mb-4">{title}</h1>
+                    <h1 className="text-4xl md:text-6xl font-bold mb-4" style={{ color: "white", textShadow: "5px 5px 4px rgba(0, 0, 0, 0.5)" }}>{title}</h1>
                     <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto">{subtitle}</p>
                 </motion.div>
             </section>
@@ -54,13 +58,15 @@ const ServicePage = ({
                         className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl"
                     >
                         <img
-                            src={overviewImage || "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=2946&auto=format&fit=crop"}
+                            src={overviewImage || defaultOverview}
                             alt="Service Overview"
                             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                         />
                     </motion.div>
                 </div>
             </section>
+            {/* Mid Section (Custom Content above Features) */}
+            {midSection}
 
             {/* Features Grid */}
             <section className="py-20 bg-[var(--color-bg-offset)]">
@@ -90,6 +96,9 @@ const ServicePage = ({
                     </div>
                 </div>
             </section>
+
+            {/* Custom Children Content */}
+            {children}
 
             {/* CTA Section */}
             <section className="py-16 bg-[var(--color-primary)] text-white text-center">
