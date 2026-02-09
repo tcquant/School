@@ -58,9 +58,12 @@ const HeroSection = () => (
                     <button onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })} className="btn btn-primary px-8 py-4 text-lg">
                         Explore Our Services
                     </button>
-                    <Link to="/#contact" className="btn btn-outline bg-white px-8 py-4 text-lg hover:bg-gray-50 shadow-sm border-gray-200 text-gray-700">
+                    <button
+                        onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                        className="btn btn-outline bg-white px-8 py-4 text-lg hover:bg-gray-50 shadow-sm border-gray-200 text-gray-700"
+                    >
                         Get in Touch
-                    </Link>
+                    </button>
                 </div>
             </motion.div>
 

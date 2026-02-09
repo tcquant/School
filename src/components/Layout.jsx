@@ -1,7 +1,8 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiMenu, FiX, FiChevronDown } from 'react-icons/fi';
+import { FiMenu, FiX, FiChevronDown, FiPhone } from 'react-icons/fi';
+import { FaWhatsapp } from 'react-icons/fa';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,6 +17,16 @@ const Navbar = () => {
 
   // Close mobile menu on route change
   useEffect(() => setIsOpen(false), [location]);
+
+  const handleContactClick = (e) => {
+    if (location.pathname === '/') {
+      e.preventDefault();
+      const element = document.getElementById('contact');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-md py-4' : 'bg-transparent py-6'}`}>
@@ -39,7 +50,7 @@ const Navbar = () => {
           <Link to="/stationery" className="px-3 py-2 text-sm hover:text-[var(--color-accent)] rounded-lg hover:bg-red-50 transition-colors">Stationery</Link>
           <Link to="/advertising" className="px-3 py-2 text-sm hover:text-[var(--color-accent)] rounded-lg hover:bg-red-50 transition-colors">Advertising</Link>
 
-          <Link to="/#contact" className="ml-4 btn btn-primary text-white !py-2.5 !px-6 text-sm rounded-full shadow-lg shadow-red-200">Contact Us</Link>
+          <Link to="/#contact" onClick={handleContactClick} className="ml-4 btn btn-primary text-white !py-2.5 !px-6 text-sm rounded-full shadow-lg shadow-red-200">Contact Us</Link>
         </div>
 
         {/* Mobile Toggle */}
@@ -69,7 +80,7 @@ const Navbar = () => {
                 <Link to="/advertising">School Advertising</Link>
               </div>
               {/* Clients Link Removed */}
-              <Link to="/#contact" className="text-[var(--color-accent)]">Contact Us</Link>
+              <Link to="/#contact" onClick={handleContactClick} className="text-[var(--color-accent)]">Contact Us</Link>
             </div>
           </motion.div>
         )}
@@ -114,13 +125,54 @@ const Footer = () => (
   </footer>
 );
 
+const WhatsAppButton = () => {
+  return (
+    <motion.a
+      href="https://wa.me/919110413537"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="fixed bottom-8 right-8 z-[100] bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center group"
+      initial={{ scale: 0, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      whileHover={{ y: -5 }}
+    >
+      <FaWhatsapp className="text-3xl" />
+      <span className="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-2 transition-all duration-500 whitespace-nowrap font-medium">
+        Chat with us
+      </span>
+    </motion.a>
+  );
+};
+
+const ScrollToHash = () => {
+  const { pathname, hash, key } = useLocation();
+
+  useEffect(() => {
+    if (hash === '') {
+      window.scrollTo(0, 0);
+    } else {
+      const id = hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [pathname, hash, key]);
+
+  return null;
+};
+
 const Layout = ({ children }) => {
   return (
     <div className="flex flex-col min-h-screen">
+      <ScrollToHash />
       <Navbar />
       <main className="flex-grow pt-20">
         {children}
       </main>
+      <WhatsAppButton />
       <Footer />
     </div>
   );
